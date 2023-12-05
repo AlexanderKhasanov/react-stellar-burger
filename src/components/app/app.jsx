@@ -1,17 +1,16 @@
-import { Fragment } from "react";
 import styles from "./app.module.css";
 import AppHeader from "../app-header/app-header";
 import BurgetIngredients from "../burger-ingredients/burger-ingredients";
-//import { data } from "../../utils/data";
+import { data } from "../../utils/data";
 
 function App() {
   return (
-    <Fragment className={styles.app}>
+    <div className={`pt-10 pb-10 ${styles.app}`}>
       <AppHeader />
-      <main>
-        <BurgetIngredients/>
+      <main className={`pl-5 pr-5 ${styles.main}`}>
+        <BurgetIngredients data={data}/>
       </main>
-    </Fragment>
+    </div>
   );
 }
 
