@@ -1,6 +1,7 @@
 import styles from "./app.module.css";
 import AppHeader from "../app-header/app-header";
-import BurgetIngredients from "../burger-ingredients/burger-ingredients";
+import BurgerIngredients from "../burger-ingredients/burger-ingredients";
+import BurgerConstructor from "../burger-constructor/burger-constructor";
 import { data } from "../../utils/data";
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <div className={`pt-10 pb-10 ${styles.app}`}>
       <AppHeader />
       <main className={`pl-5 pr-5 ${styles.main}`}>
-        <BurgetIngredients data={data}/>
+        <BurgerIngredients data={data}/>
+        <BurgerConstructor data={data}/>
       </main>
     </div>
   );

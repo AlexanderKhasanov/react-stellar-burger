@@ -9,7 +9,7 @@ export default function IngredientCard({data}) {
                     src={data.image}
                     alt={`Изображение ингредиента ${data.name}`}
                 />
-                <div className={`mt-2 mb-2 ${styles.price   }`}>
+                <div className={`mt-2 mb-2 ${styles.price}`}>
                     <p className={"text text_type_digits-default"}>{data.price}</p>
                     <CurrencyIcon type="primery"/>
                 </div>

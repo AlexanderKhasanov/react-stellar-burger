@@ -2,28 +2,26 @@ import {useMemo} from "react"
 import React from "react"
 import {  Counter } from "@ya.praktikum/react-developer-burger-ui-components";
 import IngredientTabs from "../ingredient-tabs/ingredient-tabs";
+import PropTypes from "prop-types";
 import IngredientCategory from "../ingredient-categoty/ingredient-categoty";
-import styles from "./burger-ingredients.module.css"
+import styles from "./burger-ingredients.module.css";
+import {ingredientPropType} from "../../utils/prop-types";
 
-export default function BurgetIngredients({data}) {
-    const buns = useMemo(
-        () => data.filter(item => item.type === "bun"),
+export default function BurgerIngredients({data}) {
+    const {buns, sauces, main} = useMemo(
+        () => ({
+          buns: data.filter(item => item.type === "bun"),
+          sauces: data.filter(item => item.type === "sauce"),
+          main: data.filter(item => item.type === "main")
+        }),
         [data]
-    )
-    const sauces = useMemo(
-        () => data.filter(item => item.type === "sauce"),
-        [data]
-    )
-    const main = useMemo(
-        () => data.filter(item => item.type === "main"),
-        [data]
-    )
+    );
 
     return (
         <section className={styles.section}>
             <h1 className={'text text_type_main-large mt-10 mb-5'}>Соберите бургер</h1>
             <IngredientTabs />
-            <ul className={`${styles.ingredients_list} custom-scroll`}>
+            <ul className={`custom-scroll ${styles.ingredients_list}`}>
                 <IngredientCategory ingredients={buns} categoryName={"Булки"}/>
                 <IngredientCategory ingredients={sauces} categoryName={"Соусы"}/>
                 <IngredientCategory ingredients={main} categoryName={"Начинки"}/>
@@ -31,3 +29,7 @@ export default function BurgetIngredients({data}) {
         </section>
     );
 }
+
+BurgerIngredients.propTypes = {
+    data: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired
+};

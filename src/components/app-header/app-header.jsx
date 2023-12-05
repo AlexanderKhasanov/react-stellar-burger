@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./app-header.module.css"
+import styles from "./app-header.module.css";
 import { Logo, BurgerIcon, ListIcon, ProfileIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import NavigationItem from "../navigation-item/navigation-item"
+import NavigationItem from "../navigation-item/navigation-item";
 
 export default function AppHeader() {
     return (
