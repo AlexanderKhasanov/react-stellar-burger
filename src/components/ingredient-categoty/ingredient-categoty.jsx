@@ -1,5 +1,7 @@
 import IngredientCard from "../ingredient-card/ingredient-card";
-import styles from './ingredient-categoty.module.css'
+import styles from './ingredient-categoty.module.css';
+import PropTypes from "prop-types";
+import {ingredientPropType} from "../../utils/prop-types";
 
 export default function IngredientCategory({ingredients, categoryName}) {
     return (
@@ -11,3 +13,8 @@ export default function IngredientCategory({ingredients, categoryName}) {
         </li>
     );
 }
+
+IngredientCategory.propTypes = {
+    ingredients: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
+    categoryName: PropTypes.string.isRequired
+};

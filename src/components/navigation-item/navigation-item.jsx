@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./navigation-item.module.css"
+import PropTypes from "prop-types";
 
 export default function NavigationItem({ Icon, iconText, isActive }) {
     const iconType = isActive ? 'primery' : 'secondary';
@@ -14,3 +15,9 @@ export default function NavigationItem({ Icon, iconText, isActive }) {
         </li>
     )
 }
+
+NavigationItem.propTypes = {
+    Icon: PropTypes.elementType.isRequired,
+    iconText: PropTypes.string.isRequired,
+    isActive: PropTypes.bool.isRequired
+};

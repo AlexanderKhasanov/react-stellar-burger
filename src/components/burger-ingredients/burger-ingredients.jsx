@@ -1,6 +1,4 @@
 import {useMemo} from "react"
-import React from "react"
-import {  Counter } from "@ya.praktikum/react-developer-burger-ui-components";
 import IngredientTabs from "../ingredient-tabs/ingredient-tabs";
 import PropTypes from "prop-types";
 import IngredientCategory from "../ingredient-categoty/ingredient-categoty";

@@ -8,11 +8,13 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
+    row-gap: 16px;
 }
 
 .change_elements {
+    composes: constructor_container;
     overflow-y: scroll;
-    max-height: calc(100vh - 520px);
+    max-height: calc(100vh - 600px);
 }
 
 .element {
